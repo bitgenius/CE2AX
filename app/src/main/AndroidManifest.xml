@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ce2ax"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Glorieta1"
+            android:label="@string/title_activity_glorieta1"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".Glorieta3"
+            android:label="@string/title_activity_glorieta3"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".Glorieta2"
+            android:label="@string/title_activity_glorieta2"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".NuevePuntos"
+            android:label="@string/title_activity_nueve_puntos"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".CalcularEficiencia"
+            android:label="@string/title_activity_calcular_eficiencia" >
+        </activity>
+        <activity
+            android:name=".Luxometro"
+            android:label="@string/title_activity_luxometro"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".CarrilExterno"
+            android:label="@string/title_activity_carril_externo"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".CarrilInterno"
+            android:label="@string/title_activity_carril_interno"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".CarrilMedio"
+            android:label="@string/title_activity_carril_medio"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".CarrilUnico"
+            android:label="@string/title_activity_carril_unico"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".Info"
+            android:label="@string/title_activity_info" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CE2AX</string>
+    <string name="action_settings">Configuración</string>
+    <string name="hint_Superficie">En m<sup><small>2</small></sup></string>
+    <string name="hint_Potencia">En W</string>
+    <string name="hint_Em">Em</string>
+    <string name="str_Tipo">TIPO</string>
+    <string name="str_Superficie">SUPERFICIE</string>
+    <string name="str_Potencia">POTENCIA</string>
+    <string name="str_Em">ILUMINANCIA MEDIA</string>
+    <string name="title_activity_nueve_puntos">NuevePuntos</string>
+    <string name="lux_on">ON</string>
+    <string name="lux_off">OFF</string>
+    <string name="title_activity_prueba">Prueba</string>
+    <string name="title_activity_calcular_eficiencia">CalcularEficiencia</string>
+    <string name="bCalcular">Calcular</string>
+    <string name="bInfo">Info</string>
+    <string name="et1">Instalación: </string>
+    <string name="et2">Localidad / Calle: </string>
+    <string name="et3">Horario de Funcionamiento: </string>
+    <string name="et4">Consumo de energía anual (kWh/año): </string>
+    <string name="et5">Emisiones de CO2 anual (kgCO2/año):</string>
+    <string name="et6">Indice de eficiencia energética (Iε):</string>
+    <string name="et7">Iluminancia media en servicio Em (lux) :</string>
+    <string name="et8">Uniformidad (%) :</string>
+    <string name="title_activity_luxometro">Luxometro</string>
+
+    <string-array name="sensor">
+        <item>Sensor de Luz</item>
+        <item>Cámara Frontal + calibración</item>
+        <item>Cámara Frontal + Exiff + calibración</item>
+    </string-array>
+
+    <string name="title_activity_informacion">Informacion</string>
+    <string name="title_activity_info">Info</string>
+
+    <string-array name="carril">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string name="title_activity_glorieta1">Glorieta1</string>
+    <string name="title_activity_glorieta2">Glorieta2</string>
+    <string name="title_activity_glorieta3">Glorieta3</string>
+    <string name="title_activity_carril_unico">CarrilUnico</string>
+    <string name="title_activity_carril_externo">CarrilExterno</string>
+    <string name="title_activity_carril_medio">CarrilMedio</string>
+    <string name="title_activity_carril_interior">CarrilInterior</string>
+    <string name="rb_via">Vía</string>
+    <string name="rb_glorieta">Glorieta</string>
+    <string name="rb_funcional">Funcional</string>
+    <string name="rb_ambiental">Ambiental</string>
+    <string name="descMedir">Medición manual mediante método</string>
+    <string name="promptCarriles">Carriles :</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_carril_interno">CarrilInterno</string>
+
+</resources>
