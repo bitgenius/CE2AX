@@ -47,6 +47,8 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+//prueba
+
 public class Luxometro extends Activity implements SensorEventListener {
 
 	private SensorManager mSensorManager;
