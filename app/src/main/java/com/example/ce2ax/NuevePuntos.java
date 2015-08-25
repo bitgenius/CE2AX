@@ -978,7 +978,7 @@ public class NuevePuntos extends Activity {
 				// get prompts.xml view
 				if (luxo.isChecked())
 				{
-					startLuxometro(160);
+					startLuxometro(150);
 				}
 				else
 				{
@@ -1047,7 +1047,241 @@ public class NuevePuntos extends Activity {
 		
 	}
 
-	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+		if (resultCode == RESULT_OK)
+		{
+			switch(requestCode){
+				case 10:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp1.setText("");
+						p1.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp1.setText(data.getStringExtra("result").replaceAll(",","."));
+						p1.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 20:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp2.setText("");
+						p2.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp2.setText(data.getStringExtra("result").replaceAll(",","."));
+						p2.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 30:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp3.setText("");
+						p3.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp3.setText(data.getStringExtra("result").replaceAll(",","."));
+						p3.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 40:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp4.setText("");
+						p4.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp4.setText(data.getStringExtra("result").replaceAll(",","."));
+						p4.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 50:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp5.setText("");
+						p5.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp5.setText(data.getStringExtra("result").replaceAll(",","."));
+						p5.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 60:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp6.setText("");
+						p6.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp6.setText(data.getStringExtra("result").replaceAll(",","."));
+						p6.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 70:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp7.setText("");
+						p4.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp7.setText(data.getStringExtra("result").replaceAll(",","."));
+						p7.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 80:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp8.setText("");
+						p8.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp8.setText(data.getStringExtra("result").replaceAll(",","."));
+						p8.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 90:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp9.setText("");
+						p9.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp9.setText(data.getStringExtra("result").replaceAll(",","."));
+						p9.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 100:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp10.setText("");
+						p10.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp10.setText(data.getStringExtra("result").replaceAll(",","."));
+						p10.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 110:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp11.setText("");
+						p11.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp11.setText(data.getStringExtra("result").replaceAll(",","."));
+						p11.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 120:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp12.setText("");
+						p12.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp12.setText(data.getStringExtra("result").replaceAll(",","."));
+						p12.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 130:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp13.setText("");
+						p13.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp13.setText(data.getStringExtra("result").replaceAll(",","."));
+						p13.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 140:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp14.setText("");
+						p14.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp14.setText(data.getStringExtra("result").replaceAll(",","."));
+						p14.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 150:
+
+					if (data.getStringExtra("result").equals(""))
+					{
+						tp15.setText("");
+						p15.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					else
+					{
+						tp15.setText(data.getStringExtra("result").replaceAll(",","."));
+						p15.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado ()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+			}
+		}
+	}//onActivityResult
 	
 	/*
 	 * Cálculo del valos Em a partir de la formula de los 9 puntos.
@@ -1083,10 +1317,11 @@ public class NuevePuntos extends Activity {
 		e9= Double.valueOf(editD3.getText().toString());
 		
 		double em= (e1+(e2*2)+e3+(2*e4)+(4*e5)+(2*e6)+e7+(2*e8)+e9) / 16;
-		
+
+
 		Intent intent = new Intent();
-	    intent.putExtra("result", String.valueOf(em));
-	    setResult(OK_RESULT_CODE, intent);
+	    intent.putExtra("em", String.valueOf(em));
+	    setResult(RESULT_OK, intent);
 	    finish();
 		
 	}
@@ -1132,6 +1367,7 @@ public class NuevePuntos extends Activity {
 	{
 		Intent intent = new Intent(this, Luxometro.class);
 		startActivityForResult(intent, punto);
+
 	}
 	
 }

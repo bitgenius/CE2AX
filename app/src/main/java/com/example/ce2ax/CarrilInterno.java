@@ -312,7 +312,7 @@ public class CarrilInterno extends ActionBarActivity {
 		TextView tizq = (TextView) findViewById(R.id.tizq);
 		TextView tmed = (TextView) findViewById(R.id.tmed);
 
-		ArrayList<String> mensajes = new ArrayList<String>();
+		ArrayList<String> mensajes = new ArrayList<>();
 		
 		mensajes.add(tizq.getText().toString());
 		mensajes.add(tmed.getText().toString());

@@ -125,6 +125,8 @@ public class Luxometro extends Activity implements SensorEventListener {
 		mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 		mSensorManager.registerListener(this, mLight, SensorManager.SENSOR_DELAY_NORMAL);
 
+		//Inicializamos Display
+		cambiarDisplay(0);
 
 		//Inicializacion del seekbar que será utilizado para calibrar el luxómetro
 		volumeControl = (SeekBar) findViewById(R.id.seekBar1);
@@ -648,7 +650,7 @@ public class Luxometro extends Activity implements SensorEventListener {
 	public void capturaLux(View view)
 	{
 		Intent intent = new Intent();
-		intent.putExtra("result", valorFinal);
+		intent.putExtra("result", String.valueOf(valorFinal));
 		setResult(RESULT_OK, intent);
 		finish();
 	}

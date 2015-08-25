@@ -189,13 +189,14 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-		if (requestCode == 1) {
-			if(resultCode == RESULT_OK){
-				String result=data.getStringExtra("result");
+
+		if(resultCode == RESULT_OK){
+
+		if (requestCode == REQUEST_CODE) {
+
+				String result=data.getStringExtra("em");
+				System.out.println(result);
 				editTextEm.setText(result);
-			}
-			if (resultCode == RESULT_CANCELED) {
-				//Write your code if there's no result
 			}
 		}
 	}//onActivityResult
