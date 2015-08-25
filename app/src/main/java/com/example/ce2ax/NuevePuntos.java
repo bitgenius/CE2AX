@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+
+
 public class NuevePuntos extends Activity {
 
 	final Context context = this;

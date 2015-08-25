@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="carril">
         <item>1</item>
@@ -12,7 +12,7 @@
         <item>Cámara Frontal + calibración</item>
         <item>Cámara Frontal + Exiff + calibración</item>
     </string-array>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -133,11 +133,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -171,7 +171,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Configuración</string>
     <string name="app_name">CE2AX</string>
@@ -215,7 +215,7 @@
     <string name="title_activity_luxometro">Luxometro</string>
     <string name="title_activity_nueve_puntos">NuevePuntos</string>
     <string name="title_activity_prueba">Prueba</string>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
@@ -233,7 +233,7 @@
         <item name="actionBarStyle">@style/MyActionBar</item>
         
     </style>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
         <item name="android:textColor">?android:textColorPrimary</item>
@@ -987,7 +987,7 @@
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/actionbar_background</item>
@@ -995,7 +995,7 @@
         <!-- Support library compatibility -->
         <item name="background">@drawable/actionbar_background</item>
     </style>
-    <!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AXbis/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
