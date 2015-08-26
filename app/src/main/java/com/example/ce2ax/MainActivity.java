@@ -190,9 +190,11 @@ public class MainActivity extends ActionBarActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
+		System.out.println ("requestCode="+requestCode+" resultCode="+resultCode+" RESULT_OK="+RESULT_OK);
 		if(resultCode == RESULT_OK){
 
 		if (requestCode == REQUEST_CODE) {
+
 
 				String result=data.getStringExtra("em");
 				System.out.println(result);

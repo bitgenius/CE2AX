@@ -100,7 +100,7 @@ public class CarrilUnico extends ActionBarActivity {
 				
 				if (luxo.isChecked())
 				{
-					startLuxometro();
+					startLuxometro(1);
 				}
 				else
 				{
@@ -168,7 +168,7 @@ public class CarrilUnico extends ActionBarActivity {
 				
 				if (luxo.isChecked())
 				{
-					startLuxometro();
+					startLuxometro(2);
 				}
 				else
 				{
@@ -236,7 +236,7 @@ public class CarrilUnico extends ActionBarActivity {
 				
 				if (luxo.isChecked())
 				{
-					startLuxometro();
+					startLuxometro(3);
 				}
 				else
 				{
@@ -306,6 +306,51 @@ public class CarrilUnico extends ActionBarActivity {
 		
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+		if (resultCode == RESULT_OK) {
+			switch (requestCode) {
+				case 1:
+
+					if (data.getStringExtra("result").equals("")) {
+						tizq.setText("");
+						pizq.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					} else {
+						tizq.setText(data.getStringExtra("result").replaceAll(",", "."));
+						pizq.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 2:
+					if (data.getStringExtra("result").equals("")) {
+						tmed.setText("");
+						pmed.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					} else {
+						tmed.setText(data.getStringExtra("result").replaceAll(",", "."));
+						pmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+				case 3:
+					if (data.getStringExtra("result").equals("")) {
+						tder.setText("");
+						pder.setImageDrawable(getResources().getDrawable(R.drawable.puntorojo));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					} else {
+						tder.setText(data.getStringExtra("result").replaceAll(",", "."));
+						pder.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+						if (completado()) calcular.setVisibility(View.VISIBLE);
+					}
+					break;
+			}
+		}
+	}
+
+
 	protected void devolverResultado() {
 		// TODO Auto-generated method stub
 		
@@ -334,10 +379,10 @@ public class CarrilUnico extends ActionBarActivity {
 		return true;
 	}
 
-	public void startLuxometro()
+	public void startLuxometro(int punto)
 	{
 		Intent intent = new Intent(this, Luxometro.class);
-		startActivityForResult(intent, REQUEST_CODE);
+		startActivityForResult(intent, punto);
 	}
 	
 	

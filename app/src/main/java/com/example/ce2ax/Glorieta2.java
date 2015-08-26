@@ -311,9 +311,11 @@ public class Glorieta2 extends Activity {
 
 
 
+		System.out.println ("em="+String.valueOf(em)+"  RESULT_OK="+RESULT_OK);
+
 		Intent intent = new Intent();
-		intent.putExtra("result", String.valueOf(em));
-		setResult(OK_RESULT_CODE, intent);
+		intent.putExtra("em", String.valueOf(em));
+		setResult(RESULT_OK, intent);
 		finish();
 
 	}
@@ -522,8 +524,8 @@ public class Glorieta2 extends Activity {
 
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
 
 		if (requestCode == REQUEST_CODE_SUPCENARR) {
 			if (data != null)

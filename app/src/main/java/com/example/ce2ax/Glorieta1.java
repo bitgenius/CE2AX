@@ -167,6 +167,8 @@ public class Glorieta1 extends Activity {
 
 	}
 
+
+
 	protected void calcularEm() {
 
 		double em;
@@ -179,10 +181,11 @@ public class Glorieta1 extends Activity {
 		em = em / 24;
 
 
+		System.out.println ("em="+String.valueOf(em)+"  RESULT_OK="+RESULT_OK);
 
 		Intent intent = new Intent();
-		intent.putExtra("result", String.valueOf(em));
-		setResult(OK_RESULT_CODE, intent);
+		intent.putExtra("em", String.valueOf(em));
+		setResult(RESULT_OK, intent);
 		finish();
 	}
 
@@ -295,9 +298,11 @@ public class Glorieta1 extends Activity {
 		return true;
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
+		//super.onActivityResult(requestCode, resultCode, data);
 
+		System.out.println ("requestCode="+requestCode+" resultCode="+resultCode); //<--------- hey!!
 		if (requestCode == REQUEST_CODE_SUPCEN) {
 			if (data != null)
 			{

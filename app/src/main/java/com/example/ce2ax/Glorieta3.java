@@ -66,7 +66,7 @@ public class Glorieta3 extends Activity {
 	public final static String EXTRA_MESSAGE = "Datos";
 	private ImageView psupcenarr,psupderarr,psupizqarr, pmedderarr, pmedizqarr, pinfizqarr, pinfcenarr, pinfderarr;
 	private ImageView psupcenab,psupderab,psupizqab, pmedderab, pmedizqab, pinfizqab, pinfcenab, pinfderab;
-	private ImageView psupcenmed,psupdermed,psupizqmed, pmeddermed, pmedizqmed, pinfizqmed, pinfcenmed, pinfdermed;
+	private ImageView psupcenmed,psupdermed,psupizqmed, pmeddermed, pmedizqmed, pinfizqmed, pinfcenmed, pinfdermed,calcular;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +98,9 @@ public class Glorieta3 extends Activity {
 		pinfizqmed = (ImageView) findViewById(R.id.pinfizqmed);
 		pinfdermed = (ImageView) findViewById(R.id.pinfdermed);
 		pinfcenmed = (ImageView) findViewById(R.id.pinfcenmed);
+
+		calcular = (ImageView) findViewById(R.id.Calc);
+
 
 		psupcenarr.setOnClickListener(new OnClickListener() {
 
@@ -627,7 +630,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.supcenmed2));
 			argumentos.add(Double.toString(this.supcenmed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_SUPCENARR);
+			startActivityForResult(intent, REQUEST_CODE_SUPCENMED);
 		}
 
 		if (i == 18 )
@@ -639,7 +642,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.supdermed2));
 			argumentos.add(Double.toString(this.supdermed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_SUPDERARR);
+			startActivityForResult(intent, REQUEST_CODE_SUPDERMED);
 		}
 
 		if (i == 19 )
@@ -651,7 +654,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.meddermed2));
 			argumentos.add(Double.toString(this.meddermed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_MEDDERARR);
+			startActivityForResult(intent, REQUEST_CODE_MEDDERMED);
 		}
 
 		if (i == 20 )
@@ -663,7 +666,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.infdermed2));
 			argumentos.add(Double.toString(this.infdermed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_INFDERARR);
+			startActivityForResult(intent, REQUEST_CODE_INFDERMED);
 		}
 
 		if (i == 21 )
@@ -675,7 +678,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.infcenmed2));
 			argumentos.add(Double.toString(this.infcenmed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_INFCENARR);
+			startActivityForResult(intent, REQUEST_CODE_INFCENMED);
 		}
 
 		if (i == 22 )
@@ -687,7 +690,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.infizqmed2));
 			argumentos.add(Double.toString(this.infizqmed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_INFIZQARR);
+			startActivityForResult(intent, REQUEST_CODE_INFIZQMED);
 		}
 
 		if (i == 23 )
@@ -699,7 +702,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.medizqmed2));
 			argumentos.add(Double.toString(this.medizqmed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_MEDIZQARR);
+			startActivityForResult(intent, REQUEST_CODE_MEDIZQMED);
 		}
 
 		if (i == 24 )
@@ -711,7 +714,7 @@ public class Glorieta3 extends Activity {
 			argumentos.add(Double.toString(this.supizqmed2));
 			argumentos.add(Double.toString(this.supizqmed3));
 			intent.putExtra(EXTRA_MESSAGE, argumentos);
-			startActivityForResult(intent, REQUEST_CODE_SUPIZQARR);
+			startActivityForResult(intent, REQUEST_CODE_SUPIZQMED);
 		}
 
 	}
@@ -731,7 +734,7 @@ public class Glorieta3 extends Activity {
 					psupcenarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -748,7 +751,7 @@ public class Glorieta3 extends Activity {
 					psupderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -765,7 +768,7 @@ public class Glorieta3 extends Activity {
 					pmedderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -782,7 +785,7 @@ public class Glorieta3 extends Activity {
 					pinfderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -799,7 +802,7 @@ public class Glorieta3 extends Activity {
 					pinfcenarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -816,7 +819,7 @@ public class Glorieta3 extends Activity {
 					pinfizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -833,7 +836,7 @@ public class Glorieta3 extends Activity {
 					pmedizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -850,7 +853,7 @@ public class Glorieta3 extends Activity {
 					psupizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -867,7 +870,7 @@ public class Glorieta3 extends Activity {
 					psupcenab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -884,7 +887,7 @@ public class Glorieta3 extends Activity {
 					psupderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -901,7 +904,7 @@ public class Glorieta3 extends Activity {
 					pmedderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -915,10 +918,10 @@ public class Glorieta3 extends Activity {
 				this.infderab3 = Double.parseDouble(resultado.get(2));
 				if ((this.infderab1 >= 0) && (this.infderab2 >= 0) && (this.infderab3 >= 0))
 				{
-					pinfderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+					pinfderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -935,7 +938,7 @@ public class Glorieta3 extends Activity {
 					pinfcenab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -952,7 +955,7 @@ public class Glorieta3 extends Activity {
 					pinfizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -969,7 +972,7 @@ public class Glorieta3 extends Activity {
 					pmedizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -986,7 +989,7 @@ public class Glorieta3 extends Activity {
 					psupizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1007,7 +1010,7 @@ public class Glorieta3 extends Activity {
 					psupcenmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1024,7 +1027,7 @@ public class Glorieta3 extends Activity {
 					psupdermed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1041,7 +1044,7 @@ public class Glorieta3 extends Activity {
 					pmeddermed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1055,10 +1058,10 @@ public class Glorieta3 extends Activity {
 				this.infdermed3 = Double.parseDouble(resultado.get(2));
 				if ((this.infdermed1 >= 0) && (this.infdermed2 >= 0) && (this.infdermed3 >= 0))
 				{
-					pinfderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+					pinfdermed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1075,7 +1078,7 @@ public class Glorieta3 extends Activity {
 					pinfcenmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1092,7 +1095,7 @@ public class Glorieta3 extends Activity {
 					pinfizqmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1104,12 +1107,12 @@ public class Glorieta3 extends Activity {
 				this.medizqmed1 = Double.parseDouble(resultado.get(0));
 				this.medizqmed2 = Double.parseDouble(resultado.get(1));
 				this.medizqmed3 = Double.parseDouble(resultado.get(2));
-				if ((this.medizqmed1 >= 0) && (this.medizqarr2 >= 0) && (this.medizqarr3 >= 0))
+				if ((this.medizqmed1 >= 0) && (this.medizqmed2 >= 0) && (this.medizqmed3 >= 0))
 				{
 					pmedizqmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1126,7 +1129,7 @@ public class Glorieta3 extends Activity {
 					psupizqmed.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
 				}
 
-
+				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 			}
 
 		}
@@ -1137,4 +1140,66 @@ public class Glorieta3 extends Activity {
 
 
 	}
+
+	protected void calcularEm() {
+
+		double em;
+		em =supcenarr1+supcenarr2+supcenarr3+supcenab1+supcenab2+supcenab3+supizqarr1+supizqarr2+supizqarr3
+				+supizqab1+supizqab2+supizqab3+supderarr1+supderarr2+supderarr3+supderab1+supderab2+supderab3
+				+medizqarr1+medizqarr2+medizqarr3+medizqab1+medizqab2+medizqab3+medderarr1+medderarr2+medderarr3
+				+medderab1+medderab2+medderab3+infcenarr1+infcenarr2+infcenarr3
+				+infcenab1+infcenab2+infcenab3+infizqarr1+infizqarr2+infizqarr3+infizqab1+infizqab2+infizqab3
+				+infderarr1+infderarr2+infderarr3+infderab1+infderab2+infderab3
+				+supcenmed1+supcenmed2+supcenmed3+supizqmed1+supizqmed2+supizqmed3
+				+supdermed1+supdermed2+supdermed3+medizqmed1+medizqmed2+medizqmed3
+				+meddermed1+meddermed2+meddermed3+infcenmed1+infcenmed2+infcenmed3
+				+infizqmed1+infizqmed2+infizqmed3+infdermed1+infdermed2+infdermed3;
+		em = em / 72;
+
+
+
+		System.out.println ("em="+String.valueOf(em)+"  RESULT_OK="+RESULT_OK);
+
+		Intent intent = new Intent();
+		intent.putExtra("em", String.valueOf(em));
+		setResult(RESULT_OK, intent);
+		finish();
+
+	}
+
+	public boolean completado ()
+	{
+
+		System.out.println ("supcenarr1="+supcenarr1+" supcenarr2="+supcenarr2+" "+"supcenarr3="+supcenarr3+" "+"supcenab1="+supcenab1+" "+"supcenab2="+supcenab2+" "+"supcenab3="+supcenab3+" "+"supizqarr1="+supizqarr1+" "+"supizqarr2="+supizqarr2+" "+"supizqarr3="+supizqarr3+" "+"supizqab1="+supizqab1+" "+"supizqab2="+supizqab2+" "+"supizqab3="+supizqab3+" "+"supderarr1="+supderarr1+" "+"supderarr2="+supderarr2+" "+"supderarr3="+supderarr3+" "+"supderab1="+supderab1+" "+"supderab2="+supderab2+" "+"supderab3="+supderab3+" "+"medizqarr1="+medizqarr1+" "+"medizqarr2="+medizqarr2+" "+"medizqarr3="+medizqarr3+" "+"medizqab1="+medizqab1+" "+"medizqab2="+medizqab2+" "+"medizqab3="+medizqab3+" "+"medderarr1="+medderarr1+" "+"medderarr2="+medderarr2+" "+"medderarr3="+medderarr3+" "+"medderab1="+medderab1+" "+"medderab2="+medderab2+" "+"medderab3="+medderab3+" "+"infcenarr1="+infcenarr1+" "+"infcenarr2="+infcenarr2+" "+"infcenarr3="+infcenarr3+" "+"infcenab1="+infcenab1+" "+"infcenab2="+infcenab2+" "+"infcenab3="+infcenab3+" "+"infizqarr1="+infizqarr1+" "+"infizqarr2="+infizqarr2+" "+"infizqarr3="+infizqarr3+" "+"infizqab1="+infizqab1+" "+"infizqab2="+infizqab2+" "+"infizqab3="+infizqab3+" "+"infderarr1="+infderarr1+" "+"infderarr2="+infderarr2+" "+"infderarr3="+infderarr3+" "+"infderab1="+infderab1+" "+"infderab2="+infderab2+" "+"infderab3="+infderab3+" "+"supcenmed1="+supcenmed1+" "+"supcenmed2="+supcenmed2+" "+"supcenmed3="+supcenmed3+" "+"supizqmed1="+supizqmed1+" "+"supizqmed2="+supizqmed2+" "+"supizqmed3="+supizqmed3+" "+"supdermed1="+supdermed1+" "+"supdermed2="+supdermed2+" "+"supdermed3="+supdermed3+" "+"medizqmed1="+medizqmed1+" "+"medizqmed2="+medizqmed2+" "+"medizqmed3="+medizqmed3+" "+"meddermed1="+meddermed1+" "+"meddermed2="+meddermed2+" "+"meddermed3="+meddermed3+" "+"infcenmed1="+infcenmed1+" "+"infcenmed2="+infcenmed2+" "+"infcenmed3="+infcenmed3+" "+"infizqmed1="+infizqmed1+" "+"infizqmed2="+infizqmed2+" "+"infizqmed3="+infizqmed3+" "+"infdermed1="+infdermed1+" "+"infdermed2="+infdermed2+" "+"infdermed3="+infdermed3+" ");
+
+
+
+		return ((supcenarr1!= -1) && (supcenarr2!=-1) && (supcenarr3!=-1)
+				&& (supcenab1!=-1) && (supcenab2!=-1) && (supcenab3!=-1)
+				&& (supizqarr1!=-1) && (supizqarr2!=-1) && (supizqarr3!=-1)
+				&& (supizqab1!=-1) && (supizqab2!=-1) && (supizqab3 !=-1)
+				&& (supderarr1!=-1)  && (supderarr2!=-1) && (supderarr3!=-1)
+				&& (supderab1!=-1)  && (supderab2!=-1) && (supderab3!=-1)
+				&& (medizqarr1!=-1)  && (medizqarr2!=-1) && (medizqarr3!=-1)
+				&& (medizqab1!=-1)  && (medizqab2!=-1) && (medizqab3!=-1)
+				&& (medderarr1!=-1)  && (medderarr2!=-1) && (medderarr3!=-1)
+				&& (medderab1!=-1)  && (medderab2!=-1) && (medderab3!=-1)
+				&& (infcenarr1!=-1)  && (infcenarr2!=-1) && (infcenarr3!=-1)
+				&& (infcenab1!=-1)  && (infcenab2!=-1) && (infcenab3!=-1)
+				&& (infizqarr1!=-1)  && (infizqarr2!=-1) && (infizqarr3!=-1)
+				&& (infizqab1!=-1)  && (infizqab2!=-1) && (infizqab3!=-1)
+				&& (infderarr1!=-1)  && (infderarr2!=-1) && (infderarr3!=-1)
+				&& (infderab1!=-1)  && (infderab2!=-1) && (infderab3!=-1)
+				&&  (supcenmed1!=-1) && (supcenmed2!=-1) && (supcenmed3!=-1)
+				&&  (supizqmed1!=-1) && (supizqmed2!=-1) && (supizqmed3!=-1)
+				&&  (supdermed1!=-1) && (supdermed2!=-1) && (supdermed3!=-1)
+				&&  (medizqmed1!=-1) && (medizqmed2!=-1) && (medizqmed3!=-1)
+				&&  (meddermed1!=-1) && (meddermed2!=-1) && (meddermed3!=-1)
+				&&  (infcenmed1!=-1) && (infcenmed2!=-1) && (infcenmed3!=-1)
+				&&  (infizqmed1!=-1) && (infizqmed2!=-1) && (infizqmed3!=-1)
+				&&  (infdermed1!=-1) && (infdermed2!=-1) && (infdermed3!=-1));
+
+	}
+
+
 }
