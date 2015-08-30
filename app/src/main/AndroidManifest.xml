@@ -14,6 +14,11 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -80,6 +85,18 @@
         <activity
             android:name=".Info"
             android:label="@string/title_activity_info" >
+        </activity>
+        <activity
+            android:name=".EtiquetaListActivity"
+            android:label="@string/title_etiqueta_list" >
+        </activity>
+        <activity
+            android:name=".EtiquetaDetailActivity"
+            android:label="@string/title_etiqueta_detail"
+            android:parentActivityName=".EtiquetaListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ce2ax.EtiquetaListActivity" />
         </activity>
     </application>
 

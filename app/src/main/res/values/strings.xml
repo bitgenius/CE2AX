@@ -57,5 +57,7 @@
     <string name="promptCarriles">Carriles :</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_carril_interno">CarrilInterno</string>
+    <string name="title_etiqueta_list">Etiquetas</string>
+    <string name="title_etiqueta_detail">Etiqueta Detail</string>
 
 </resources>

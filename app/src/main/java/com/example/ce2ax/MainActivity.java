@@ -26,9 +26,6 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 
 	
-	private static final String LOGTAG = "eficiencia"; //DEPURACION BORRAR!
-	
-	
 	final Context context = this;
 	private EditText editTextSuperficie;
 	private EditText editTextPotencia;
@@ -60,12 +57,12 @@ public class MainActivity extends ActionBarActivity {
 		this.editTextPotencia = (EditText) this.findViewById(R.id.editPotencia);
 		this.editTextEm = (EditText) this.findViewById(R.id.editEm);
 		
-		/* En un principio se oculta el bot�n Calcular, que sol�mente se mostrar� si est�n todos los campos completados */
+		/* En un principio se oculta el botón Calcular, que solámente se mostrará si están todos los campos completados */
 		
 		
 		tcalcular.setVisibility(View.GONE);	
 
-		/* Listener para el bot�n "Calcular". Si se pulsa llamar� al m�todo "calcularEficiencia" */
+		/* Listener para el botón "Calcular". Si se pulsa llamará al método "calcularEficiencia" */
 		
 		tcalcular.setOnClickListener(new OnClickListener() {
 
@@ -77,7 +74,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		});
 		
-		/* Listener para controlar la visibilidad del radioGroupFun en el caso que no est� marcado "V�a" */
+		/* Listener para controlar la visibilidad del radioGroupFun en el caso que no está marcado "Vía" */
 		
 		this.rgTipo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 		      public void onCheckedChanged(RadioGroup arg0, int id) {
@@ -99,8 +96,8 @@ public class MainActivity extends ActionBarActivity {
 		    });
 		
 		
-		/* Listeners para controlar que todos los edittext no est�n en blanco y si est�n todos completos 	 *
-		 * el bot�n calcular se har� visible 																 */
+		/* Listeners para controlar que todos los edittext no están en blanco y si están todos completos 	 *
+		 * el botón calcular se hará visible 																 */
 		
 		// listener para superficie:
 		this.editTextSuperficie.addTextChangedListener(new TextWatcher() {			
@@ -206,7 +203,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	
 	
-	/* M�todo para definir los parametros para enviar como mensaje a la actividad en la que se muestra la etiqueta */
+	/* Método para definir los parametros para enviar como mensaje a la actividad en la que se muestra la etiqueta */
 	
 	public void calcularEficiencia ()
 	{
@@ -241,7 +238,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	
-	/* M�todo que nos indica si todos los campos est�n completados */
+	/* Método que nos indica si todos los campos están completados */
 	
 	public boolean completado()
 	{
@@ -251,7 +248,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	
-	/* M�todo que seg�n el tipo de v�a comienza la actividad de medida (9 puntos o glorieta) */
+	/* Método que según el tipo de vía comienza la actividad de medida (9 puntos o glorieta) */
 	
 	
 	public void comenzarMedir (View view)
@@ -259,7 +256,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		if (this.rgTipo.getCheckedRadioButtonId()==R.id.radioGlor){
 			
-			//Ventana emergente para seleccionar el n�mero de carriles de la glorieta:
+			//Ventana emergente para seleccionar el número de carriles de la glorieta:
 			LayoutInflater li = LayoutInflater.from(context);
 			View promptsView = li.inflate(R.layout.carriles, null);
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
@@ -277,7 +274,7 @@ public class MainActivity extends ActionBarActivity {
 			dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			userInput.setAdapter(dataAdapter);
 			
-			//inicializamos listener de bot�n para comenzar la actividad correspondiente a 1, 2 o 3 carriles:
+			//inicializamos listener de botón para comenzar la actividad correspondiente a 1, 2 o 3 carriles:
 			
 			alertDialogBuilder.setCancelable(false).setPositiveButton("OK",
 					  new DialogInterface.OnClickListener() {

@@ -45,8 +45,6 @@ public class CarrilUnico extends ActionBarActivity {
 		 this.punto2=Double.parseDouble(mensajes.get(2));
 		 this.punto3=Double.parseDouble(mensajes.get(3));
 
-		 System.out.println ("Recibimos : "+this.punto1+" "+this.punto2+" "+this.punto3);
-		 System.out.println ("Recibimos2 : "+mensajes.get(0)+" "+mensajes.get(1)+" "+mensajes.get(2)+" "+mensajes.get(3));
 		
 		pder = (ImageView) findViewById (R.id.pder);
 		pmed = (ImageView) findViewById (R.id.pmed);
@@ -389,9 +387,6 @@ public class CarrilUnico extends ActionBarActivity {
 	public boolean completado ()
 	{
 
-		System.out.println (" 1 ."+tizq.getText().toString());
-		System.out.println (" 2 ."+tmed.getText().toString());
-		System.out.println (" 3 ."+tder.getText().toString());
 		return ((!tizq.getText().toString().equals("")) && (!tmed.getText().toString().equals("")) && (!tder.getText().toString().equals("")));
 		
 	}

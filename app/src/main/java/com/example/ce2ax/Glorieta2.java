@@ -52,6 +52,69 @@ public class Glorieta2 extends Activity {
 
 	private static final int OK_RESULT_CODE = 1;
 
+	@Override
+	protected void onSaveInstanceState(Bundle state) {
+		super.onSaveInstanceState(state);
+		state.putSerializable("supcenarr1", supcenarr1);
+		state.putSerializable("supcenarr2", supcenarr2);
+		state.putSerializable("supcenarr3", supcenarr3);
+		state.putSerializable("supcenab1", supcenab1);
+		state.putSerializable("supcenab2", supcenab2);
+		state.putSerializable("supcenab3", supcenab3);
+		state.putSerializable("supizqarr1", supizqarr1);
+		state.putSerializable("supizqarr2", supizqarr2);
+		state.putSerializable("supizqarr3", supizqarr3);
+		state.putSerializable("supizqab1", supizqab1);
+		state.putSerializable("supizqab2", supizqab2);
+		state.putSerializable("supizqab3", supizqab3);
+		state.putSerializable("supderarr1", supderarr1);
+		state.putSerializable("supderarr2", supderarr2);
+		state.putSerializable("supderarr3", supderarr3);
+		state.putSerializable("supderab1", supderab1);
+		state.putSerializable("supderab2", supderab2);
+		state.putSerializable("supderab3", supderab3);
+		state.putSerializable("medizqarr1", medizqarr1);
+		state.putSerializable("medizqarr2", medizqarr2);
+		state.putSerializable("medizqarr3", medizqarr3);
+		state.putSerializable("medizqab1", medizqab1);
+		state.putSerializable("medizqab2", medizqab2);
+		state.putSerializable("medizqab3", medizqab3);
+		state.putSerializable("medderarr1", medderarr1);
+		state.putSerializable("medderarr2", medderarr2);
+		state.putSerializable("medderarr3", medderarr3);
+		state.putSerializable("medderab1", medderab1);
+		state.putSerializable("medderab2", medderab2);
+		state.putSerializable("medderab3", medderab3);
+		state.putSerializable("infcenarr1", infcenarr1);
+		state.putSerializable("infcenarr2", infcenarr2);
+		state.putSerializable("infcenarr3", infcenarr3);
+		state.putSerializable("infcenab1", infcenab1);
+		state.putSerializable("infcenab2", infcenab2);
+		state.putSerializable("infcenab3", infcenab3);
+		state.putSerializable("infizqarr1", infizqarr1);
+		state.putSerializable("infizqarr2", infizqarr2);
+		state.putSerializable("infizqarr3", infizqarr3);
+		state.putSerializable("infizqab1", infizqab1);
+		state.putSerializable("infizqab2", infizqab2);
+		state.putSerializable("infizqab3", infizqab3);
+		state.putSerializable("infderarr1", infderarr1);
+		state.putSerializable("infderarr2", infderarr2);
+		state.putSerializable("infderarr3", infderarr3);
+		state.putSerializable("infderab1", infderab1);
+		state.putSerializable("infderab2", infderab2);
+		state.putSerializable("infderab3", infderab3);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState)
+	{
+		super.onRestoreInstanceState(savedInstanceState);
+		restaurarEstado(savedInstanceState);
+
+
+	}
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -296,6 +359,11 @@ public class Glorieta2 extends Activity {
 
 			}
 		});
+
+		if (savedInstanceState != null) {
+			restaurarEstado(savedInstanceState);
+		}
+
 	}
 
 	protected void calcularEm() {
@@ -310,8 +378,6 @@ public class Glorieta2 extends Activity {
 		em = em / 48;
 
 
-
-		System.out.println ("em="+String.valueOf(em)+"  RESULT_OK="+RESULT_OK);
 
 		Intent intent = new Intent();
 		intent.putExtra("em", String.valueOf(em));
@@ -723,7 +789,7 @@ public class Glorieta2 extends Activity {
 				this.infderab3 = Double.parseDouble(resultado.get(2));
 				if ((this.infderab1 >= 0) && (this.infderab2 >= 0) && (this.infderab3 >= 0))
 				{
-					pinfderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
+					pinfderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
 
 				if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
@@ -772,7 +838,7 @@ public class Glorieta2 extends Activity {
 				this.medizqab1 = Double.parseDouble(resultado.get(0));
 				this.medizqab2 = Double.parseDouble(resultado.get(1));
 				this.medizqab3 = Double.parseDouble(resultado.get(2));
-				if ((this.medizqab1 >= 0) && (this.medizqarr2 >= 0) && (this.medizqarr3 >= 0))
+				if ((this.medizqab1 >= 0) && (this.medizqab2 >= 0) && (this.medizqab3 >= 0))
 				{
 					pmedizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverde));
 				}
@@ -823,6 +889,144 @@ public class Glorieta2 extends Activity {
 				&& (infizqab1!=-1)  && (infizqab2!=-1) && (infizqab3!=-1)
 				&& (infderarr1!=-1)  && (infderarr2!=-1) && (infderarr3!=-1)
 				&& (infderab1!=-1)  && (infderab2!=-1) && (infderab3!=-1));
+
+	}
+
+	private void restaurarEstado(Bundle savedInstanceState)
+	{
+		supcenarr1= (double) savedInstanceState.getSerializable("supcenarr1");
+		supcenarr2= (double) savedInstanceState.getSerializable("supcenarr2");
+		supcenarr3= (double) savedInstanceState.getSerializable("supcenarr3");
+		supcenab1= (double) savedInstanceState.getSerializable("supcenab1");
+		supcenab2= (double) savedInstanceState.getSerializable("supcenab2");
+		supcenab3= (double) savedInstanceState.getSerializable("supcenab3");
+		supizqarr1= (double) savedInstanceState.getSerializable("supizqarr1");
+		supizqarr2= (double) savedInstanceState.getSerializable("supizqarr2");
+		supizqarr3= (double) savedInstanceState.getSerializable("supizqarr3");
+		supizqab1= (double) savedInstanceState.getSerializable("supizqab1");
+		supizqab2= (double) savedInstanceState.getSerializable("supizqab2");
+		supizqab3= (double) savedInstanceState.getSerializable("supizqab3");
+		supderarr1= (double) savedInstanceState.getSerializable("supderarr1");
+		supderarr2= (double) savedInstanceState.getSerializable("supderarr2");
+		supderarr3= (double) savedInstanceState.getSerializable("supderarr3");
+		supderab1= (double) savedInstanceState.getSerializable("supderab1");
+		supderab2= (double) savedInstanceState.getSerializable("supderab2");
+		supderab3= (double) savedInstanceState.getSerializable("supderab3");
+		medizqarr1= (double) savedInstanceState.getSerializable("medizqarr1");
+		medizqarr2= (double) savedInstanceState.getSerializable("medizqarr2");
+		medizqarr3= (double) savedInstanceState.getSerializable("medizqarr3");
+		medizqab1= (double) savedInstanceState.getSerializable("medizqab1");
+		medizqab2= (double) savedInstanceState.getSerializable("medizqab2");
+		medizqab3= (double) savedInstanceState.getSerializable("medizqab3");
+		medderarr1= (double) savedInstanceState.getSerializable("medderarr1");
+		medderarr2= (double) savedInstanceState.getSerializable("medderarr2");
+		medderarr3= (double) savedInstanceState.getSerializable("medderarr3");
+		medderab1= (double) savedInstanceState.getSerializable("medderab1");
+		medderab2= (double) savedInstanceState.getSerializable("medderab2");
+		medderab3= (double) savedInstanceState.getSerializable("medderab3");
+		infcenarr1= (double) savedInstanceState.getSerializable("infcenarr1");
+		infcenarr2= (double) savedInstanceState.getSerializable("infcenarr2");
+		infcenarr3= (double) savedInstanceState.getSerializable("infcenarr3");
+		infcenab1= (double) savedInstanceState.getSerializable("infcenab1");
+		infcenab2= (double) savedInstanceState.getSerializable("infcenab2");
+		infcenab3= (double) savedInstanceState.getSerializable("infcenab3");
+		infizqarr1= (double) savedInstanceState.getSerializable("infizqarr1");
+		infizqarr2= (double) savedInstanceState.getSerializable("infizqarr2");
+		infizqarr3= (double) savedInstanceState.getSerializable("infizqarr3");
+		infizqab1= (double) savedInstanceState.getSerializable("infizqab1");
+		infizqab2= (double) savedInstanceState.getSerializable("infizqab2");
+		infizqab3= (double) savedInstanceState.getSerializable("infizqab3");
+		infderarr1= (double) savedInstanceState.getSerializable("infderarr1");
+		infderarr2= (double) savedInstanceState.getSerializable("infderarr2");
+		infderarr3= (double) savedInstanceState.getSerializable("infderarr3");
+		infderab1= (double) savedInstanceState.getSerializable("infderab1");
+		infderab2= (double) savedInstanceState.getSerializable("infderab2");
+		infderab3= (double) savedInstanceState.getSerializable("infderab3");
+
+
+
+		if ((this.supcenarr1 >= 0) && (this.supcenarr2 >= 0) && (this.supcenarr3 >= 0))
+		{
+			psupcenarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.supderarr1 >= 0) && (this.supderarr2 >= 0) && (this.supderarr3 >= 0))
+		{
+			psupderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+
+		if ((this.medderarr1 >= 0) && (this.medderarr2 >= 0) && (this.medderarr3 >= 0))
+		{
+			pmedderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infderarr1 >= 0) && (this.infderarr2 >= 0) && (this.infderarr3 >= 0))
+		{
+			pinfderarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infcenarr1 >= 0) && (this.infcenarr2 >= 0) && (this.infcenarr3 >= 0))
+		{
+			pinfcenarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infizqarr1 >= 0) && (this.infizqarr2 >= 0) && (this.infizqarr3 >= 0))
+		{
+			pinfizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.medizqarr1 >= 0) && (this.medizqarr2 >= 0) && (this.medizqarr3 >= 0))
+		{
+			pmedizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.supizqarr1 >= 0) && (this.supizqarr2 >= 0) && (this.supizqarr3 >= 0))
+		{
+			psupizqarr.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.supcenab1 >= 0) && (this.supcenab2 >= 0) && (this.supcenab3 >= 0))
+		{
+			psupcenab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.supderab1 >= 0) && (this.supderab2 >= 0) && (this.supderab3 >= 0))
+		{
+			psupderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.medderab1 >= 0) && (this.medderab2 >= 0) && (this.medderab3 >= 0))
+		{
+			pmedderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infderab1 >= 0) && (this.infderab2 >= 0) && (this.infderab3 >= 0))
+		{
+			pinfderab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infcenab1 >= 0) && (this.infcenab2 >= 0) && (this.infcenab3 >= 0))
+		{
+			pinfcenab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.infizqab1 >= 0) && (this.infizqab2 >= 0) && (this.infizqab3 >= 0))
+		{
+			pinfizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.medizqab1 >= 0) && (this.medizqarr2 >= 0) && (this.medizqarr3 >= 0))
+		{
+			pmedizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if ((this.supizqab1 >= 0) && (this.supizqab2 >= 0) && (this.supizqab3 >= 0))
+		{
+			psupizqab.setImageDrawable(getResources().getDrawable(R.drawable.puntoverdepeq));
+		}
+
+		if (completado ()) calcular.setVisibility(View.VISIBLE); else calcular.setVisibility(View.GONE);
 
 	}
 

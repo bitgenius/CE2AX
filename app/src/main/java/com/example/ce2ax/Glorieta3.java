@@ -68,23 +68,7 @@ public class Glorieta3 extends Activity {
 	private ImageView psupcenab,psupderab,psupizqab, pmedderab, pmedizqab, pinfizqab, pinfcenab, pinfderab;
 	private ImageView psupcenmed,psupdermed,psupizqmed, pmeddermed, pmedizqmed, pinfizqmed, pinfcenmed, pinfdermed,calcular;
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		System.out.println("resumimos:");
-		System.out.println ("supcenarr1="+supcenarr1+" supcenarr2="+supcenarr2+" "+"supcenarr3="+supcenarr3+" "+"supcenab1="+supcenab1+" "+"supcenab2="+supcenab2+" "+"supcenab3="+supcenab3+" "+"supizqarr1="+supizqarr1+" "+"supizqarr2="+supizqarr2+" "+"supizqarr3="+supizqarr3+" "+"supizqab1="+supizqab1+" "+"supizqab2="+supizqab2+" "+"supizqab3="+supizqab3+" "+"supderarr1="+supderarr1+" "+"supderarr2="+supderarr2+" "+"supderarr3="+supderarr3+" "+"supderab1="+supderab1+" "+"supderab2="+supderab2+" "+"supderab3="+supderab3+" "+"medizqarr1="+medizqarr1+" "+"medizqarr2="+medizqarr2+" "+"medizqarr3="+medizqarr3+" "+"medizqab1="+medizqab1+" "+"medizqab2="+medizqab2+" "+"medizqab3="+medizqab3+" "+"medderarr1="+medderarr1+" "+"medderarr2="+medderarr2+" "+"medderarr3="+medderarr3+" "+"medderab1="+medderab1+" "+"medderab2="+medderab2+" "+"medderab3="+medderab3+" "+"infcenarr1="+infcenarr1+" "+"infcenarr2="+infcenarr2+" "+"infcenarr3="+infcenarr3+" "+"infcenab1="+infcenab1+" "+"infcenab2="+infcenab2+" "+"infcenab3="+infcenab3+" "+"infizqarr1="+infizqarr1+" "+"infizqarr2="+infizqarr2+" "+"infizqarr3="+infizqarr3+" "+"infizqab1="+infizqab1+" "+"infizqab2="+infizqab2+" "+"infizqab3="+infizqab3+" "+"infderarr1="+infderarr1+" "+"infderarr2="+infderarr2+" "+"infderarr3="+infderarr3+" "+"infderab1="+infderab1+" "+"infderab2="+infderab2+" "+"infderab3="+infderab3+" "+"supcenmed1="+supcenmed1+" "+"supcenmed2="+supcenmed2+" "+"supcenmed3="+supcenmed3+" "+"supizqmed1="+supizqmed1+" "+"supizqmed2="+supizqmed2+" "+"supizqmed3="+supizqmed3+" "+"supdermed1="+supdermed1+" "+"supdermed2="+supdermed2+" "+"supdermed3="+supdermed3+" "+"medizqmed1="+medizqmed1+" "+"medizqmed2="+medizqmed2+" "+"medizqmed3="+medizqmed3+" "+"meddermed1="+meddermed1+" "+"meddermed2="+meddermed2+" "+"meddermed3="+meddermed3+" "+"infcenmed1="+infcenmed1+" "+"infcenmed2="+infcenmed2+" "+"infcenmed3="+infcenmed3+" "+"infizqmed1="+infizqmed1+" "+"infizqmed2="+infizqmed2+" "+"infizqmed3="+infizqmed3+" "+"infdermed1="+infdermed1+" "+"infdermed2="+infdermed2+" "+"infdermed3="+infdermed3+" ");
-	}
 
-	public void onPause() {
-		super.onPause();  // Always call the superclass method first
-
-		// Release the Camera because we don't need it when paused
-		// and other activities might need to use it.
-		System.out.println("pausamos:");
-		System.out.println ("supcenarr1="+supcenarr1+" supcenarr2="+supcenarr2+" "+"supcenarr3="+supcenarr3+" "+"supcenab1="+supcenab1+" "+"supcenab2="+supcenab2+" "+"supcenab3="+supcenab3+" "+"supizqarr1="+supizqarr1+" "+"supizqarr2="+supizqarr2+" "+"supizqarr3="+supizqarr3+" "+"supizqab1="+supizqab1+" "+"supizqab2="+supizqab2+" "+"supizqab3="+supizqab3+" "+"supderarr1="+supderarr1+" "+"supderarr2="+supderarr2+" "+"supderarr3="+supderarr3+" "+"supderab1="+supderab1+" "+"supderab2="+supderab2+" "+"supderab3="+supderab3+" "+"medizqarr1="+medizqarr1+" "+"medizqarr2="+medizqarr2+" "+"medizqarr3="+medizqarr3+" "+"medizqab1="+medizqab1+" "+"medizqab2="+medizqab2+" "+"medizqab3="+medizqab3+" "+"medderarr1="+medderarr1+" "+"medderarr2="+medderarr2+" "+"medderarr3="+medderarr3+" "+"medderab1="+medderab1+" "+"medderab2="+medderab2+" "+"medderab3="+medderab3+" "+"infcenarr1="+infcenarr1+" "+"infcenarr2="+infcenarr2+" "+"infcenarr3="+infcenarr3+" "+"infcenab1="+infcenab1+" "+"infcenab2="+infcenab2+" "+"infcenab3="+infcenab3+" "+"infizqarr1="+infizqarr1+" "+"infizqarr2="+infizqarr2+" "+"infizqarr3="+infizqarr3+" "+"infizqab1="+infizqab1+" "+"infizqab2="+infizqab2+" "+"infizqab3="+infizqab3+" "+"infderarr1="+infderarr1+" "+"infderarr2="+infderarr2+" "+"infderarr3="+infderarr3+" "+"infderab1="+infderab1+" "+"infderab2="+infderab2+" "+"infderab3="+infderab3+" "+"supcenmed1="+supcenmed1+" "+"supcenmed2="+supcenmed2+" "+"supcenmed3="+supcenmed3+" "+"supizqmed1="+supizqmed1+" "+"supizqmed2="+supizqmed2+" "+"supizqmed3="+supizqmed3+" "+"supdermed1="+supdermed1+" "+"supdermed2="+supdermed2+" "+"supdermed3="+supdermed3+" "+"medizqmed1="+medizqmed1+" "+"medizqmed2="+medizqmed2+" "+"medizqmed3="+medizqmed3+" "+"meddermed1="+meddermed1+" "+"meddermed2="+meddermed2+" "+"meddermed3="+meddermed3+" "+"infcenmed1="+infcenmed1+" "+"infcenmed2="+infcenmed2+" "+"infcenmed3="+infcenmed3+" "+"infizqmed1="+infizqmed1+" "+"infizqmed2="+infizqmed2+" "+"infizqmed3="+infizqmed3+" "+"infdermed1="+infdermed1+" "+"infdermed2="+infdermed2+" "+"infdermed3="+infdermed3+" ");
-
-
-	}
 
 	@Override
 	protected void onSaveInstanceState(Bundle state) {
@@ -161,7 +145,6 @@ public class Glorieta3 extends Activity {
 		state.putSerializable("infdermed1", infdermed1);
 		state.putSerializable("infdermed2", infdermed2);
 		state.putSerializable("infdermed3", infdermed3);
-		System.out.println("onSave");
 	}
 
 	@Override
@@ -169,7 +152,8 @@ public class Glorieta3 extends Activity {
 	{
 		super.onRestoreInstanceState(savedInstanceState);
 		restaurarEstado(savedInstanceState);
-		System.out.println("onRestore");
+
+
 	}
 
 	@Override
@@ -177,7 +161,6 @@ public class Glorieta3 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_glorieta3);
 
-		System.out.println("onCreate");
 
 		psupcenarr = (ImageView) findViewById(R.id.psupcenarr);
 		psupizqarr = (ImageView) findViewById(R.id.psupizqarr);
@@ -533,7 +516,6 @@ public class Glorieta3 extends Activity {
 		});
 
 		if (savedInstanceState != null) {
-			System.out.println ("entramos en saved");
 			restaurarEstado(savedInstanceState);
 		}
 	}
@@ -1278,9 +1260,6 @@ public class Glorieta3 extends Activity {
 		em = em / 72;
 
 
-
-		System.out.println ("em="+String.valueOf(em)+"  RESULT_OK="+RESULT_OK);
-
 		Intent intent = new Intent();
 		intent.putExtra("em", String.valueOf(em));
 		setResult(RESULT_OK, intent);
@@ -1290,11 +1269,6 @@ public class Glorieta3 extends Activity {
 
 	public boolean completado ()
 	{
-
-		System.out.println("supcenarr1=" + supcenarr1 + " supcenarr2=" + supcenarr2 + " " + "supcenarr3=" + supcenarr3 + " " + "supcenab1=" + supcenab1 + " " + "supcenab2=" + supcenab2 + " " + "supcenab3=" + supcenab3 + " " + "supizqarr1=" + supizqarr1 + " " + "supizqarr2=" + supizqarr2 + " " + "supizqarr3=" + supizqarr3 + " " + "supizqab1=" + supizqab1 + " " + "supizqab2=" + supizqab2 + " " + "supizqab3=" + supizqab3 + " " + "supderarr1=" + supderarr1 + " " + "supderarr2=" + supderarr2 + " " + "supderarr3=" + supderarr3 + " " + "supderab1=" + supderab1 + " " + "supderab2=" + supderab2 + " " + "supderab3=" + supderab3 + " " + "medizqarr1=" + medizqarr1 + " " + "medizqarr2=" + medizqarr2 + " " + "medizqarr3=" + medizqarr3 + " " + "medizqab1=" + medizqab1 + " " + "medizqab2=" + medizqab2 + " " + "medizqab3=" + medizqab3 + " " + "medderarr1=" + medderarr1 + " " + "medderarr2=" + medderarr2 + " " + "medderarr3=" + medderarr3 + " " + "medderab1=" + medderab1 + " " + "medderab2=" + medderab2 + " " + "medderab3=" + medderab3 + " " + "infcenarr1=" + infcenarr1 + " " + "infcenarr2=" + infcenarr2 + " " + "infcenarr3=" + infcenarr3 + " " + "infcenab1=" + infcenab1 + " " + "infcenab2=" + infcenab2 + " " + "infcenab3=" + infcenab3 + " " + "infizqarr1=" + infizqarr1 + " " + "infizqarr2=" + infizqarr2 + " " + "infizqarr3=" + infizqarr3 + " " + "infizqab1=" + infizqab1 + " " + "infizqab2=" + infizqab2 + " " + "infizqab3=" + infizqab3 + " " + "infderarr1=" + infderarr1 + " " + "infderarr2=" + infderarr2 + " " + "infderarr3=" + infderarr3 + " " + "infderab1=" + infderab1 + " " + "infderab2=" + infderab2 + " " + "infderab3=" + infderab3 + " " + "supcenmed1=" + supcenmed1 + " " + "supcenmed2=" + supcenmed2 + " " + "supcenmed3=" + supcenmed3 + " " + "supizqmed1=" + supizqmed1 + " " + "supizqmed2=" + supizqmed2 + " " + "supizqmed3=" + supizqmed3 + " " + "supdermed1=" + supdermed1 + " " + "supdermed2=" + supdermed2 + " " + "supdermed3=" + supdermed3 + " " + "medizqmed1=" + medizqmed1 + " " + "medizqmed2=" + medizqmed2 + " " + "medizqmed3=" + medizqmed3 + " " + "meddermed1=" + meddermed1 + " " + "meddermed2=" + meddermed2 + " " + "meddermed3=" + meddermed3 + " " + "infcenmed1=" + infcenmed1 + " " + "infcenmed2=" + infcenmed2 + " " + "infcenmed3=" + infcenmed3 + " " + "infizqmed1=" + infizqmed1 + " " + "infizqmed2=" + infizqmed2 + " " + "infizqmed3=" + infizqmed3 + " " + "infdermed1=" + infdermed1 + " " + "infdermed2=" + infdermed2 + " " + "infdermed3=" + infdermed3 + " ");
-
-
-
 		return ((supcenarr1!= -1) && (supcenarr2!=-1) && (supcenarr3!=-1)
 				&& (supcenab1!=-1) && (supcenab2!=-1) && (supcenab3!=-1)
 				&& (supizqarr1!=-1) && (supizqarr2!=-1) && (supizqarr3!=-1)
@@ -1324,6 +1298,48 @@ public class Glorieta3 extends Activity {
 
 	private void restaurarEstado(Bundle savedInstanceState)
 	{
+		supcenarr1= (double) savedInstanceState.getSerializable("supcenarr1");
+		supcenarr2= (double) savedInstanceState.getSerializable("supcenarr2");
+		supcenarr3= (double) savedInstanceState.getSerializable("supcenarr3");
+		supcenab1= (double) savedInstanceState.getSerializable("supcenab1");
+		supcenab2= (double) savedInstanceState.getSerializable("supcenab2");
+		supcenab3= (double) savedInstanceState.getSerializable("supcenab3");
+		supcenmed1= (double) savedInstanceState.getSerializable("supcenmed1");
+		supcenmed2= (double) savedInstanceState.getSerializable("supcenmed2");
+		supcenmed3= (double) savedInstanceState.getSerializable("supcenmed3");
+		supizqarr1= (double) savedInstanceState.getSerializable("supizqarr1");
+		supizqarr2= (double) savedInstanceState.getSerializable("supizqarr2");
+		supizqarr3= (double) savedInstanceState.getSerializable("supizqarr3");
+		supizqab1= (double) savedInstanceState.getSerializable("supizqab1");
+		supizqab2= (double) savedInstanceState.getSerializable("supizqab2");
+		supizqab3= (double) savedInstanceState.getSerializable("supizqab3");
+		supizqmed1= (double) savedInstanceState.getSerializable("supizqmed1");
+		supizqmed2= (double) savedInstanceState.getSerializable("supizqmed2");
+		supizqmed3= (double) savedInstanceState.getSerializable("supizqmed3");
+		supderarr1= (double) savedInstanceState.getSerializable("supderarr1");
+		supderarr2= (double) savedInstanceState.getSerializable("supderarr2");
+		supderarr3= (double) savedInstanceState.getSerializable("supderarr3");
+		supderab1= (double) savedInstanceState.getSerializable("supderab1");
+		supderab2= (double) savedInstanceState.getSerializable("supderab2");
+		supderab3= (double) savedInstanceState.getSerializable("supderab3");
+		supdermed1= (double) savedInstanceState.getSerializable("supdermed1");
+		supdermed2= (double) savedInstanceState.getSerializable("supdermed2");
+		supdermed3= (double) savedInstanceState.getSerializable("supdermed3");
+		medizqarr1= (double) savedInstanceState.getSerializable("medizqarr1");
+		medizqarr2= (double) savedInstanceState.getSerializable("medizqarr2");
+		medizqarr3= (double) savedInstanceState.getSerializable("medizqarr3");
+		medizqab1= (double) savedInstanceState.getSerializable("medizqab1");
+		medizqab2= (double) savedInstanceState.getSerializable("medizqab2");
+		medizqab3= (double) savedInstanceState.getSerializable("medizqab3");
+		medizqmed1= (double) savedInstanceState.getSerializable("medizqmed1");
+		medizqmed2= (double) savedInstanceState.getSerializable("medizqmed2");
+		medizqmed3= (double) savedInstanceState.getSerializable("medizqmed3");
+		medderarr1= (double) savedInstanceState.getSerializable("medderarr1");
+		medderarr2= (double) savedInstanceState.getSerializable("medderarr2");
+		medderarr3= (double) savedInstanceState.getSerializable("medderarr3");
+		medderab1= (double) savedInstanceState.getSerializable("medderab1");
+		medderab2= (double) savedInstanceState.getSerializable("medderab2");
+		medderab3= (double) savedInstanceState.getSerializable("medderab3");
 		meddermed1= (double) savedInstanceState.getSerializable("meddermed1");
 		meddermed2= (double) savedInstanceState.getSerializable("meddermed2");
 		meddermed3= (double) savedInstanceState.getSerializable("meddermed3");
@@ -1354,6 +1370,7 @@ public class Glorieta3 extends Activity {
 		infdermed1= (double) savedInstanceState.getSerializable("infdermed1");
 		infdermed2= (double) savedInstanceState.getSerializable("infdermed2");
 		infdermed3= (double) savedInstanceState.getSerializable("infdermed3");
+
 
 
 		if ((this.supcenarr1 >= 0) && (this.supcenarr2 >= 0) && (this.supcenarr3 >= 0))
