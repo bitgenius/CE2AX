@@ -17,6 +17,7 @@
     <string name="title_activity_calcular_eficiencia">CalcularEficiencia</string>
     <string name="bCalcular">Calcular</string>
     <string name="bInfo">Info</string>
+    <string name="bGuardar">Guardar</string>
     <string name="et1">Instalación: </string>
     <string name="et2">Localidad / Calle: </string>
     <string name="et3">Horario de Funcionamiento: </string>
@@ -29,8 +30,8 @@
 
     <string-array name="sensor">
         <item>Sensor de Luz</item>
-        <item>Cámara Frontal + calibración</item>
-        <item>Cámara Frontal + Exiff + calibración</item>
+        <item>Cámara + Método Pixel</item>
+        <item>Cámara + Método Exiff</item>
     </string-array>
 
     <string name="title_activity_informacion">Informacion</string>

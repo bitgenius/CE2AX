@@ -302,21 +302,48 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="3"
-        android:background="@drawable/actionbar_background_inv"
-        android:orientation="vertical"
+        android:background="@drawable/actionbar_background_inv_part"
+        android:orientation="horizontal"
         android:onClick="informacion" >
 
-        <TextView
-            android:id="@+id/textViewCalc"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="@string/bInfo"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
+            android:layout_weight="1"
+            android:layout_marginTop="20dp">
 
-    </LinearLayout> 
+            <TextView
+                android:id="@+id/textViewCalc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bInfo"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bGuardar"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
     
     
 

@@ -6,8 +6,14 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Configuración"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_settings2"
+        android:orderInCategory="100"
+        android:title="Guardar"
         app:showAsAction="never"/>
 
 </menu>
-<!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/menu/calcular_eficiencia.xml -->
+<!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AX/app/src/main/res/menu/calcular_eficiencia.xml -->
