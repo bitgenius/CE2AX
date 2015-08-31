@@ -1,13 +1,22 @@
 package com.example.ce2ax;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Environment;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -175,7 +184,132 @@ public class CalcularEficiencia extends Activity {
 		startActivity(intent);
 			
 	}
-	
+
+
+	public void guardado (View view)
+	{
+		/*
+		String cumple;
+		DecimalFormat df = new DecimalFormat("0.00");
+		ArrayList<String> argumentos = new ArrayList<String>();;
+		argumentos.add(this.tipo);
+		argumentos.add(String.valueOf(df.format(this.p)));
+		argumentos.add(String.valueOf(df.format(this.s)));
+		argumentos.add(String.valueOf(df.format(this.em)));
+		argumentos.add(String.valueOf(df.format(this.e)));
+		argumentos.add(String.valueOf(df.format(this.emin)));
+		argumentos.add(String.valueOf(df.format(this.er)));
+		argumentos.add(String.valueOf(df.format(this.ie)));
+		argumentos.add(String.valueOf(df.format(this.ice)));
+		argumentos.add(this.letra);
+		if (this.e>=this.emin) cumple="1"; else cumple="0";
+		argumentos.add(cumple);
+		Intent intent = new Intent(this, Info.class);
+		intent.putExtra(EXTRA_MESSAGE, argumentos);
+		System.out.println ("Comenzamos activity");
+		startActivity(intent);
+		*/
+
+		// TODO Auto-generated method stub
+		// get prompts.xml view
+		LayoutInflater li = LayoutInflater.from(this);
+		View promptsView = li.inflate(R.layout.emerg_guardado, null);
+
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+				this);
+
+		// set prompts.xml to alertdialog builder
+		alertDialogBuilder.setView(promptsView);
+
+		final EditText userInputCalle = (EditText) promptsView
+				.findViewById(R.id.editTextCalle);
+
+		final EditText userInputObs = (EditText) promptsView
+				.findViewById(R.id.editTextObservaciones);
+
+		// set dialog message
+		alertDialogBuilder.setCancelable(false).setPositiveButton("OK",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog,int id) {
+						// get user input and set it to result
+						// edit text
+						// ----> result.setText(userInput.getText());
+						//tp1.setText(userInput.getText());
+						if (!(userInputCalle.getText().toString().equals("")))
+						{
+							guardarFichero(userInputCalle.getText().toString(),userInputObs.getText().toString());
+						}
+
+					}
+				})
+				.setNegativeButton("Cancel",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+
+		// create alert dialog
+		AlertDialog alertDialog = alertDialogBuilder.create();
+
+		// show it
+		alertDialog.show();
+
+
+
+	}
+
+	private void guardarFichero(String calle, String observaciones)
+	{
+		Etiqueta etiqueta= new Etiqueta();
+
+		etiqueta.setCalificacion(this.letra);
+		etiqueta.setCalle(calle);
+		etiqueta.setE(String.valueOf(this.e));
+		etiqueta.setEm(String.valueOf(this.em));
+		etiqueta.setEmin(String.valueOf(this.emin));
+		etiqueta.setEr(String.valueOf(this.er));
+		etiqueta.setIce(String.valueOf(this.ice));
+		etiqueta.setIe(String.valueOf(this.ie));
+		etiqueta.setPotencia(String.valueOf(this.p));
+		etiqueta.setSuperficie(String.valueOf(this.s));
+		etiqueta.setObservaciones(observaciones);
+		etiqueta.setTipo(tipo);
+
+		File fichero = new File(crearDirectorio("ce2ax"),"etiquetas.dat");
+
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero,true));
+
+			oos.writeObject(etiqueta);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+
+		this.finish();
+	}
+
+
+	private File crearDirectorio(String directorio)
+	{
+		File dir = new File(Environment.getExternalStorageDirectory(),directorio);
+
+		if (!dir.exists())
+		{
+			try{
+				dir.mkdirs();
+			}
+			catch (Error e)
+			{
+				System.out.println (e);
+			}
+		}
+
+		return dir;
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

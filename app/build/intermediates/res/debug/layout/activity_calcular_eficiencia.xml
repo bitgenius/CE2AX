@@ -302,16 +302,17 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="3"
-        android:background="@drawable/actionbar_background_inv"
+        android:background="@drawable/actionbar_background_inv_part"
         android:orientation="horizontal"
-        android:onClick="informacion" >
+         >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:onClick="informacion">
 
             <TextView
                 android:id="@+id/textViewCalc"
@@ -330,7 +331,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:onClick="guardado">
 
             <TextView
                 android:id="@+id/textView"
@@ -347,4 +349,4 @@
     
     
 
-</LinearLayout><!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AX/app/src/main/res/layout/activity_calcular_eficiencia.xml -->
+</LinearLayout><!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/layout/activity_calcular_eficiencia.xml -->

@@ -4,7 +4,7 @@
     tools:context="com.example.ce2ax.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/visualizar"
         android:orderInCategory="100"
         android:title="Visualizar Guardados"
         app:showAsAction="never"/>

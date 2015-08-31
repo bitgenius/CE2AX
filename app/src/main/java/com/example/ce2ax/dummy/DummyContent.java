@@ -1,5 +1,13 @@
 package com.example.ce2ax.dummy;
 
+import android.os.Environment;
+
+import com.example.ce2ax.Etiqueta;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,40 +24,76 @@ public class DummyContent {
     /**
      * An array of sample (dummy) items.
      */
-    public static List<DummyItem> ITEMS = new ArrayList<DummyItem>();
+    public static List<Etiqueta> ITEMS = new ArrayList<Etiqueta>();
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static Map<String, Etiqueta> ITEM_MAP = new HashMap<String, Etiqueta>();
 
     static {
         // Add 3 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
+
+        //addItem(new DummyItem("1", "Item 1"));
+        //addItem(new DummyItem("2", "Item 2"));
+        //addItem(new DummyItem("3", "Item 3"));
+
+            File dir = new File(Environment.getExternalStorageDirectory(),"ce2ax");
+
+            if (!dir.exists())
+            {
+                try{
+                    dir.mkdirs();
+                }
+                catch (Error e)
+                {
+                    System.out.println (e);
+                }
+            }
+
+            File fichero = new File(dir,"etiquetas.dat");
+
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream(fichero));
+
+
+
+            while (true)
+            {
+                Etiqueta aux = (Etiqueta) ois.readObject();
+                addItem(aux);
+            }
+
+
+
+
+
+        } catch (IOException e) {
+
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally
+        {
+            try {
+                ois.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
-    private static void addItem(DummyItem item) {
+
+    private static void addItem(Etiqueta item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(item.getCalle(), item);
     }
 
     /**
      * A dummy item representing a piece of content.
      */
-    public static class DummyItem {
-        public String id;
-        public String content;
 
-        public DummyItem(String id, String content) {
-            this.id = id;
-            this.content = content;
-        }
-
-        @Override
-        public String toString() {
-            return content;
-        }
-    }
 }

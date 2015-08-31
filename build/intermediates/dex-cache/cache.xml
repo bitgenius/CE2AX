@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-53b02d1a8c2610ce8a90c7c5c237d6300d713ecc.jar" />
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-ad270732bbeefb325d4fc67e122751b38d460f28.jar" />
     </item>
     <item
-        jar="C:\Users\FYF\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-a78f391c40ee11d27102216d16ae1af10ca08549.jar" />
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\classes-5adfcc19373bedf6f02c18a086e875cea17c09b7.jar" />
     </item>
     <item
-        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jar="C:\Users\FYF\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\classes-10627f7048b8e7a831431a6998b1de16ba5fdad0.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-f6f3139a1808cc79f9daeff05d332287ccba5b60.jar" />
     </item>
     <item
-        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jar="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\classes-15c8f94cc1022396b7853397b39186efd87864c1.jar" />
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\FYF\AndroidStudioProjects\CE2AX\app\build\intermediates\pre-dexed\debug\classes-409ecfd8bf9db335c8acd25e11b9c32584949522.jar" />
     </item>
 
 </items>

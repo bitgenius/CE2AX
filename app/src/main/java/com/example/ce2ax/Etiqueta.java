@@ -115,4 +115,10 @@ public class Etiqueta implements Serializable
     public void setIce(String ice) {
         this.ice = ice;
     }
+
+    @Override
+    public String toString() {
+        return (this.calle+"\nClaisificación: "+this.calificacion);
+    }
+
 }

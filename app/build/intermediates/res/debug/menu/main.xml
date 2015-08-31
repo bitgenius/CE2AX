@@ -4,10 +4,10 @@
     tools:context="com.example.ce2ax.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/visualizar"
         android:orderInCategory="100"
         android:title="Visualizar Guardados"
         app:showAsAction="never"/>
 
 </menu>
-<!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AX/app/src/main/res/menu/main.xml -->
+<!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/menu/main.xml -->

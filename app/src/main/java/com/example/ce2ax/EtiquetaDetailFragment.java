@@ -26,7 +26,7 @@ public class EtiquetaDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private Etiqueta mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -54,7 +54,7 @@ public class EtiquetaDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.etiqueta_detail)).setText(mItem.content);
+            ((TextView) rootView.findViewById(R.id.etiqueta_detail)).setText(mItem.getCalle());
         }
 
         return rootView;
