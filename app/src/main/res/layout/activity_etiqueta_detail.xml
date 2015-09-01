@@ -27,8 +27,8 @@
             android:id="@+id/imageView8"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="4dp"
-            android:src="@drawable/borrar"
-            android:onClick="borrar" />
+            android:onClick="borrar"
+            android:src="@drawable/cubo" />
     </LinearLayout>
 
 
