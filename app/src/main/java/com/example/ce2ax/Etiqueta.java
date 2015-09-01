@@ -118,7 +118,7 @@ public class Etiqueta implements Serializable
 
     @Override
     public String toString() {
-        return (this.calle+"\nClaisificación: "+this.calificacion);
+        return (this.calle+"\nClasificación: "+this.calificacion);
     }
 
 }

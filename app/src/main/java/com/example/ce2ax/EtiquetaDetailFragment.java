@@ -54,7 +54,11 @@ public class EtiquetaDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.etiqueta_detail)).setText(mItem.getCalle());
+            //((TextView) rootView.findViewById(R.id.etiqueta_detail)).setText(mItem.getCalle());
+            ((TextView) rootView.findViewById(R.id.textView22)).setText(mItem.getTipo());
+            ((TextView) rootView.findViewById(R.id.textView24)).setText(mItem.getCalle());
+            ((TextView) rootView.findViewById(R.id.textView32)).setText(mItem.getIe());
+            ((TextView) rootView.findViewById(R.id.textView34)).setText(mItem.getEm());
         }
 
         return rootView;

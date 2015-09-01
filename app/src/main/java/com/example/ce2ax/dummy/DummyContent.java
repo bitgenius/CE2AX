@@ -61,7 +61,9 @@ public class DummyContent {
 
             while (true)
             {
+                System.out.println ("entro");
                 Etiqueta aux = (Etiqueta) ois.readObject();
+                System.out.println (aux.toString());
                 addItem(aux);
             }
 
@@ -70,7 +72,7 @@ public class DummyContent {
 
 
         } catch (IOException e) {
-
+            System.out.println (e);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
