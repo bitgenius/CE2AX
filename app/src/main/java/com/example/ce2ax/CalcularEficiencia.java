@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -259,6 +260,23 @@ public class CalcularEficiencia extends Activity {
 
 	}
 
+	public class AppendingObjectOutputStream extends ObjectOutputStream {
+
+		public AppendingObjectOutputStream(OutputStream out) throws IOException {
+			super(out);
+		}
+
+		@Override
+		protected void writeStreamHeader() throws IOException {
+			// do not write a header, but reset:
+			// this line added after another question
+			// showed a problem with the original
+			reset();
+		}
+
+	}
+
+
 	private void guardarFichero(String calle, String observaciones)
 	{
 		Etiqueta etiqueta= new Etiqueta();
@@ -279,9 +297,18 @@ public class CalcularEficiencia extends Activity {
 		File fichero = new File(crearDirectorio("ce2ax"),"etiquetas.dat");
 
 		try {
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero,true));
+			if (fichero.exists()) {
+				AppendingObjectOutputStream oos = new AppendingObjectOutputStream(new FileOutputStream(fichero, true));
 
-			oos.writeObject(etiqueta);
+				oos.writeObject(etiqueta);
+				oos.close();
+			}
+			else {
+				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero, true));
+
+				oos.writeObject(etiqueta);
+				oos.close();
+			}
 
 		} catch (IOException e1) {
 			e1.printStackTrace();

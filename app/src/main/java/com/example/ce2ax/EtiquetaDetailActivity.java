@@ -1,10 +1,23 @@
 package com.example.ce2ax;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 
 /**
@@ -65,4 +78,152 @@ public class EtiquetaDetailActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    public void borrar (View view)
+    {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Alerta");
+        alert.setMessage("¿Está seguro que desea borrar esta etiqueta?");
+
+// Set an EditText view to get user input
+        //final EditText input = new EditText(this);
+        //alert.setView(input);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //String value = input.getText().toString();
+
+                startBorrar();
+            }
+        });
+
+        alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+            }
+        });
+
+        alert.show();
+
+
+
+
+
+
+
+
+
+    }
+
+    private void startBorrar() {
+        ArrayList etiquetas = new ArrayList();
+
+        Etiqueta mItem = EtiquetaContent.ITEM_MAP.get(getIntent().getStringExtra(EtiquetaDetailFragment.ARG_ITEM_ID));
+
+        System.out.println ("Es este? ->"+mItem.toString());
+
+        File dir = new File(Environment.getExternalStorageDirectory(),"ce2ax");
+
+        if (!dir.exists())
+        {
+            try{
+                dir.mkdirs();
+            }
+            catch (Error e)
+            {
+                System.out.println (e);
+            }
+        }
+
+        File fichero = new File(dir,"etiquetas.dat");
+
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream(fichero));
+
+
+
+            while (true)
+            {
+                System.out.println ("entro");
+                Etiqueta aux = (Etiqueta) ois.readObject();
+                System.out.println(aux.toString());
+                if (!(aux.getCalle().equals(mItem.getCalle()))) etiquetas.add(aux);
+            }
+
+
+
+
+
+        } catch (IOException e) {
+            System.out.println (e);
+            try {
+                ois.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally
+        {
+            try {
+                ois.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        reguardarFichero(etiquetas);
+
+        this.finish();
+    }
+
+    private void reguardarFichero(ArrayList etiquetas)
+    {
+
+        File fichero = new File(crearDirectorio("ce2ax"),"etiquetas.dat");
+
+
+        fichero.delete();
+
+        try {
+
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero, true));
+            for (int i=0;i<etiquetas.size();i++)
+            {
+                oos.writeObject((Etiqueta) etiquetas.get(i));
+            }
+            oos.close();
+
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+
+    }
+
+    private File crearDirectorio(String directorio)
+    {
+        File dir = new File(Environment.getExternalStorageDirectory(),directorio);
+
+        if (!dir.exists())
+        {
+            try{
+                dir.mkdirs();
+            }
+            catch (Error e)
+            {
+                System.out.println (e);
+            }
+        }
+
+        return dir;
+    }
+
 }

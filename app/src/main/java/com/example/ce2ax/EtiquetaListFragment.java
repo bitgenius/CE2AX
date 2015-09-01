@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
-import com.example.ce2ax.dummy.DummyContent;
-
 /**
  * A list fragment representing a list of Etiquetas. This fragment
  * also supports tablet devices by allowing list items to be given an
@@ -25,6 +22,9 @@ public class EtiquetaListFragment extends ListFragment {
      * The serialization (saved instance state) Bundle key representing the
      * activated item position. Only used on tablets.
      */
+    EtiquetaContent et = new EtiquetaContent();
+
+
     private static final String STATE_ACTIVATED_POSITION = "activated_position";
 
     /**
@@ -67,21 +67,28 @@ public class EtiquetaListFragment extends ListFragment {
     public EtiquetaListFragment() {
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        et.actualizar();
+        System.out.println ("Entro en el onCreate de listfragment");
         // TODO: replace with a real list adapter.
         setListAdapter(new ArrayAdapter<Etiqueta>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                DummyContent.ITEMS));
+                EtiquetaContent.ITEMS));
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
 
         // Restore the previously serialized activated item position.
         if (savedInstanceState != null
@@ -89,6 +96,8 @@ public class EtiquetaListFragment extends ListFragment {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
     }
+
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -116,7 +125,7 @@ public class EtiquetaListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).getCalle());
+        mCallbacks.onItemSelected(EtiquetaContent.ITEMS.get(position).getCalle());
     }
 
     @Override
@@ -126,6 +135,21 @@ public class EtiquetaListFragment extends ListFragment {
             // Serialize and persist the activated item position.
             outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
         }
+    }
+
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        et.actualizar();
+        System.out.println("Entro en el onCreate de listfragment");
+        // TODO: replace with a real list adapter.
+        setListAdapter(new ArrayAdapter<Etiqueta>(
+                getActivity(),
+                android.R.layout.simple_list_item_activated_1,
+                android.R.id.text1,
+                EtiquetaContent.ITEMS));
     }
 
     /**

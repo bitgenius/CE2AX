@@ -138,14 +138,6 @@
                     android:layout_weight="1.6"
                     android:weightSum="1">
 
-                    <ImageButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageButton"
-                        android:layout_weight="0.44"
-                        android:background="@drawable/cambio_cam"
-                        android:clickable="false"
-                        android:onClick="cambiaCamara" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -190,29 +182,54 @@
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff" />
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_weight="3.0" />
 
-            <Button
-                android:id="@+id/button1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:text="Capturar"
-                android:onClick="capturaLux" />
-
-            <FrameLayout
-                android:id="@+id/preview"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_weight="2.6">
 
-            </FrameLayout>
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageButton"
+                    android:layout_weight="1"
+                    android:background="@drawable/switch_camera"
+                    android:clickable="false"
+                    android:onClick="cambiaCamara"
+                    android:layout_margin="5dp" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageButton2"
+                    android:background="@drawable/camara"
+                    android:layout_weight="1"
+                    android:onClick="capturaLux" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <FrameLayout
+                    android:id="@+id/preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_centerInParent="true">
+
+                </FrameLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/ssevilla/AndroidStudioProjects/CE2AX/app/src/main/res/layout/activity_luxometro.xml -->
+<!-- From: file:/C:/Users/FYF/AndroidStudioProjects/CE2AX/app/src/main/res/layout/activity_luxometro.xml -->
