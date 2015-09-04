@@ -16,7 +16,6 @@ public class Info extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		System.out.println ("activity Comenzada");
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 	    ArrayList<String> mensajes = intent.getStringArrayListExtra(CalcularEficiencia.EXTRA_MESSAGE);

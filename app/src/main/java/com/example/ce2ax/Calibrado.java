@@ -124,7 +124,6 @@ public class Calibrado
         if (!pictureDir.exists())
         {
             try{
-                System.out.println ("Creamos dir");
                 pictureDir.mkdirs();
             }
             catch (Error e)

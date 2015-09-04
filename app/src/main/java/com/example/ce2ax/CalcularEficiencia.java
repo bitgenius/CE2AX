@@ -47,9 +47,7 @@ public class CalcularEficiencia extends Activity {
 	    this.em=Double.valueOf(mensajes.get(1)).doubleValue();
 	    this.s=Double.valueOf(mensajes.get(2)).doubleValue();
 	    this.tipo= mensajes.get(3);
-	    //System.out.println (tipo);
 	    this.ice = calcularICE(p,em,s,tipo);
-		System.out.println ("ice "+this.ice);
 	    setContentView(R.layout.activity_calcular_eficiencia);
 	    
 	    this.letra = calcularCertificacion (this.ice);
@@ -181,7 +179,6 @@ public class CalcularEficiencia extends Activity {
 	    argumentos.add(cumple);
 	    Intent intent = new Intent(this, Info.class);
 		intent.putExtra(EXTRA_MESSAGE, argumentos);
-		System.out.println ("Comenzamos activity");
 		startActivity(intent);
 			
 	}
@@ -189,27 +186,7 @@ public class CalcularEficiencia extends Activity {
 
 	public void guardado (View view)
 	{
-		/*
-		String cumple;
-		DecimalFormat df = new DecimalFormat("0.00");
-		ArrayList<String> argumentos = new ArrayList<String>();;
-		argumentos.add(this.tipo);
-		argumentos.add(String.valueOf(df.format(this.p)));
-		argumentos.add(String.valueOf(df.format(this.s)));
-		argumentos.add(String.valueOf(df.format(this.em)));
-		argumentos.add(String.valueOf(df.format(this.e)));
-		argumentos.add(String.valueOf(df.format(this.emin)));
-		argumentos.add(String.valueOf(df.format(this.er)));
-		argumentos.add(String.valueOf(df.format(this.ie)));
-		argumentos.add(String.valueOf(df.format(this.ice)));
-		argumentos.add(this.letra);
-		if (this.e>=this.emin) cumple="1"; else cumple="0";
-		argumentos.add(cumple);
-		Intent intent = new Intent(this, Info.class);
-		intent.putExtra(EXTRA_MESSAGE, argumentos);
-		System.out.println ("Comenzamos activity");
-		startActivity(intent);
-		*/
+
 
 		// TODO Auto-generated method stub
 		// get prompts.xml view

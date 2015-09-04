@@ -41,7 +41,7 @@ public class EtiquetaContent {
         //addItem(new DummyItem("2", "Item 2"));
         //addItem(new DummyItem("3", "Item 3"));
 
-        System.out.println ("Entro en el dummycontent");
+
 
             File dir = new File(Environment.getExternalStorageDirectory(),"ce2ax");
 
@@ -66,9 +66,7 @@ public class EtiquetaContent {
 
             while (true)
             {
-                System.out.println ("entro");
                 Etiqueta aux = (Etiqueta) ois.readObject();
-                System.out.println (aux.toString());
                 addItem(aux);
             }
 
@@ -77,7 +75,7 @@ public class EtiquetaContent {
 
 
         } catch (IOException e) {
-            System.out.println (e);
+
             try {
                 ois.close();
             } catch (IOException ex) {

@@ -48,7 +48,6 @@ public class Calculos
 
 
         luminance=luminance/(bitmap.getWidth()*bitmap.getHeight());
-        System.out.println("esto es lo que sale de luminancia :"+luminance+" calculandolo con :"+(bitmap.getWidth()*bitmap.getHeight())+" pixeles en total");
 
 
         return luminance;
@@ -85,7 +84,6 @@ public class Calculos
 
 
         luminance=luminance/(bitmap.getWidth()*bitmap.getHeight());
-        System.out.println("esto es lo que sale de luminancia :"+luminance+" calculandolo con :"+(bitmap.getWidth()*bitmap.getHeight())+" pixeles en total");
         fis.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -110,7 +108,6 @@ public class Calculos
         double luminance=0;
         File pictureFile = new File(crearDirectorio("ce2ax"), "ce2ax.tmp");
         ExifInterface exif = new ExifInterface(pictureFile.getAbsolutePath());
-        System.out.println("ISO = " + exif.getAttribute(ExifInterface.TAG_ISO));
         luminance = getLuminanceJPG(pictureFile);
 
 
@@ -139,8 +136,6 @@ public class Calculos
 
         File pictureFile = new File(crearDirectorio("ce2ax"), "ce2ax.tmp");
         ExifInterface exif = new ExifInterface(pictureFile.getAbsolutePath());
-        System.out.println("ISO = " + exif.getAttribute(ExifInterface.TAG_ISO));
-
 
         int iso=0;
         String t="",fnumber="";
@@ -173,12 +168,10 @@ public class Calculos
 
         }
 
-        System.out.println ("iso="+iso+" t(exposure time)="+t+" fnumber="+fnumber);
         double resultado=0;
         double f= Double.valueOf(fnumber);
         double td= Double.valueOf(t);
         resultado=((f*f)/(td*iso));
-        System.out.println ("resultado "+resultado);
 
 
         return resultado;
@@ -191,7 +184,6 @@ public class Calculos
         if (!pictureDir.exists())
         {
             try{
-                System.out.println ("Creamos dir");
                 pictureDir.mkdirs();
             }
             catch (Error e)

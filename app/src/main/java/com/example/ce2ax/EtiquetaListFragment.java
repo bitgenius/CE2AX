@@ -75,7 +75,6 @@ public class EtiquetaListFragment extends ListFragment {
 
 
         et.actualizar();
-        System.out.println ("Entro en el onCreate de listfragment");
         // TODO: replace with a real list adapter.
         setListAdapter(new ArrayAdapter<Etiqueta>(
                 getActivity(),
@@ -143,7 +142,6 @@ public class EtiquetaListFragment extends ListFragment {
     {
         super.onResume();
         et.actualizar();
-        System.out.println("Entro en el onCreate de listfragment");
         // TODO: replace with a real list adapter.
         setListAdapter(new ArrayAdapter<Etiqueta>(
                 getActivity(),

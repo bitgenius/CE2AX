@@ -1,5 +1,14 @@
 package com.example.ce2ax;
 
+/**
+ * 		CE2AX: Aplicación móvil para el cálculo de la eficiencia energética en el alumbrado exterior
+ *		@Author Sergio Sevilla
+ *
+ *  MainActivity - 	Clase principal de la aplicación. Enlazada con layout "activity_main"
+ *  				Muestra menú principal con las distintas opciones y valores que puede
+ *  				escoger el usuario.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +35,7 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 
 	
-	final Context context = this;
+	final Context CONTEXT = this;
 	private EditText editTextSuperficie;
 	private EditText editTextPotencia;
 	private EditText editTextEm;
@@ -40,9 +49,8 @@ public class MainActivity extends ActionBarActivity {
 	
 	protected static final int REQUEST_CODE = 10;
 	public final static String EXTRA_MESSAGE = "Datos Calcular Eficiencia";
-	
-	
-	
+
+	/*Métodos Override: onCreate, onCreateOptionsMenu, onOptionsItemSelected y onActivityResult */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,7 +66,6 @@ public class MainActivity extends ActionBarActivity {
 		this.editTextEm = (EditText) this.findViewById(R.id.editEm);
 		
 		/* En un principio se oculta el botón Calcular, que solámente se mostrará si están todos los campos completados */
-		
 		
 		tcalcular.setVisibility(View.GONE);	
 
@@ -166,19 +173,15 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+
 		switch (item.getItemId()) {
 			case R.id.visualizar:
-				//metodoAdd()
 				Intent intent = new Intent(this, EtiquetaListActivity.class);
 				startActivity(intent);
 				return true;
@@ -190,27 +193,21 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
 
-
-		System.out.println("requestCode=" + requestCode + " resultCode=" + resultCode + " RESULT_OK=" + RESULT_OK);
-		if(resultCode == RESULT_OK){
-
-		if (requestCode == REQUEST_CODE) {
-
-
-				String result=data.getStringExtra("em");
-				System.out.println(result);
-				editTextEm.setText(result);
+		if(resultCode == RESULT_OK)
+		{
+			if (requestCode == REQUEST_CODE) //Si el resultado coincide con REQUEST_CODE
+			{
+					String result=data.getStringExtra("em");
+					editTextEm.setText(result);	//Se completa editTextEm con el resultado devuelto
 			}
 		}
-	}//onActivityResult
+	}
 	
-	
-	
-	
+
 	/* Método para definir los parametros para enviar como mensaje a la actividad en la que se muestra la etiqueta */
-	
 	public void calcularEficiencia ()
 	{
 		
@@ -242,30 +239,27 @@ public class MainActivity extends ActionBarActivity {
 			
 		}
 	}
-	
-	
+
+
 	/* Método que nos indica si todos los campos están completados */
-	
 	public boolean completado()
 	{
 		
 		return (!(editTextSuperficie.getText().toString().equals("")) && !(editTextEm.getText().toString().equals("")) &&
    			 		!(editTextPotencia.getText().toString().equals("")));
 	}
-	
-	
-	/* Método que según el tipo de vía comienza la actividad de medida (9 puntos o glorieta) */
-	
-	
+
+
+	/*Método que según el tipo de vía comienza la actividad de medida (9 puntos o glorieta) */
 	public void comenzarMedir (View view)
 	{
 		
 		if (this.rgTipo.getCheckedRadioButtonId()==R.id.radioGlor){
 			
 			//Ventana emergente para seleccionar el número de carriles de la glorieta:
-			LayoutInflater li = LayoutInflater.from(context);
+			LayoutInflater li = LayoutInflater.from(CONTEXT);
 			View promptsView = li.inflate(R.layout.carriles, null);
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CONTEXT);
 			alertDialogBuilder.setView(promptsView);
 			final Spinner userInput = (Spinner) promptsView
 					.findViewById(R.id.spinnerCarriles);
@@ -286,34 +280,33 @@ public class MainActivity extends ActionBarActivity {
 					  new DialogInterface.OnClickListener() {
 					    public void onClick(DialogInterface dialog,int id) {
 
-					    	if (userInput.getSelectedItem().equals("1 carril")) {
-					    		comienza(1);
+							if (userInput.getSelectedItem().equals("1 carril")) {
+					    		comienzaGlorieta(1);
 
 					    	}
-					    	if (userInput.getSelectedItem().equals("2 carriles")) {
-					    		comienza(2);
+							if (userInput.getSelectedItem().equals("2 carriles")) {
+					    		comienzaGlorieta(2);
 
 					    	}
-					    	if (userInput.getSelectedItem().equals("3 carriles")) {
-					    		comienza(3);
+							if (userInput.getSelectedItem().equals("3 carriles")) {
+					    		comienzaGlorieta(3);
 
 					    	}
 					    	
 					    }
 					  })
 					.setNegativeButton("Cancel",
-					  new DialogInterface.OnClickListener() {
-					    public void onClick(DialogInterface dialog,int id) {
-					    	numCarriles=0;
-						dialog.cancel();
-					    }
-					  });
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog, int id) {
+									numCarriles = 0;
+									dialog.cancel();
+								}
+							});
 			
 			AlertDialog alertDialog = alertDialogBuilder.create();
 
 			
 			alertDialog.show();
-			System.out.println ("carril fuera= "+numCarriles);
 			if (numCarriles==1)
 			{
 				Intent intent = new Intent(this, Glorieta1.class);
@@ -326,12 +319,11 @@ public class MainActivity extends ActionBarActivity {
 			startActivityForResult(intent, REQUEST_CODE);
 		}
 	}
-	
-	
-	
-	protected void comienza(int carriles) {
-	
-		
+
+
+	/*Método que según el tipo de glorienta comienza la actividad de medida*/
+	protected void comienzaGlorieta(int carriles)
+	{
 		if (carriles==1) {Intent intent = new Intent(this, Glorieta1.class);startActivityForResult(intent, REQUEST_CODE);}
 		if (carriles==2) {Intent intent = new Intent(this, Glorieta2.class);startActivityForResult(intent, REQUEST_CODE);}
 		if (carriles==3) {Intent intent = new Intent(this, Glorieta3.class);startActivityForResult(intent, REQUEST_CODE);}

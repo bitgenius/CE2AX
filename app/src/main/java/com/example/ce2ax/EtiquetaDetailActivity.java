@@ -124,7 +124,6 @@ public class EtiquetaDetailActivity extends ActionBarActivity {
 
         Etiqueta mItem = EtiquetaContent.ITEM_MAP.get(getIntent().getStringExtra(EtiquetaDetailFragment.ARG_ITEM_ID));
 
-        System.out.println ("Es este? ->"+mItem.toString());
 
         File dir = new File(Environment.getExternalStorageDirectory(),"ce2ax");
 
@@ -149,9 +148,7 @@ public class EtiquetaDetailActivity extends ActionBarActivity {
 
             while (true)
             {
-                System.out.println ("entro");
                 Etiqueta aux = (Etiqueta) ois.readObject();
-                System.out.println(aux.toString());
                 if (!(aux.getCalle().equals(mItem.getCalle()))) etiquetas.add(aux);
             }
 
@@ -160,7 +157,6 @@ public class EtiquetaDetailActivity extends ActionBarActivity {
 
 
         } catch (IOException e) {
-            System.out.println (e);
             try {
                 ois.close();
             } catch (IOException ex) {
@@ -179,6 +175,7 @@ public class EtiquetaDetailActivity extends ActionBarActivity {
 
 
         reguardarFichero(etiquetas);
+
 
         this.finish();
     }
