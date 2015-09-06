@@ -54,4 +54,9 @@ public class Info extends ActionBarActivity {
 		return true;
 	}
 
+	public void regresar (View view)
+	{
+		this.finish();
+	}
+
 }
